@@ -30,7 +30,7 @@ module.exports = {
             {test:/\.(jpg|png|gif|bmp|jpeg)$/,use:'url-loader'},
             {test:/\.(ttf|eot|svg|woff|otf)$/,use:'url-loader'},
             {test:/\.less$/,use:['style-loader','css-loader','less-loader']},
-            {test:/\.less$/,use:['style-loader','css-loader','sass-loader']},
+            {test:/\.scss$/,use:['style-loader','css-loader','sass-loader']},
             {test:/\.js$/,use:'babel-loader',exclude:/(node_modules|bower_components)/},
             {test:/\.vue$/,use:'vue-loader'}
         ]

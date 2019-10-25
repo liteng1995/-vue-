@@ -7,14 +7,26 @@ import app from'./App.vue'
 
 // 导入MUI的样式
 import './lib/mui/css/mui.min.css'
+import '../src/lib/mui/css/icons-extra.css'
+
+import VueRouter from 'vue-router'
+Vue.use(VueRouter) 
 
 import 'mint-ui/lib/style.css'
 // 按需导入mint-ui 中的组件
-import {Header} from 'mint-ui'
+import {Header,Swipe, SwipeItem } from 'mint-ui'
 Vue.component(Header.name,Header)
+Vue.component(Swipe.name,Swipe)
+Vue.component(SwipeItem.name,SwipeItem)
+
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
+
+import router from './router'
 
 var vm = new Vue({
     el:'#app',
-    render:c=>c(app)
+    render:c=>c(app),
+    router
 })
 
