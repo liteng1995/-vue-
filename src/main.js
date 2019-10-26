@@ -14,15 +14,22 @@ Vue.use(VueRouter)
 
 import 'mint-ui/lib/style.css'
 // 按需导入mint-ui 中的组件
-import {Header,Swipe, SwipeItem } from 'mint-ui'
+import {Header,Swipe, SwipeItem,Button} from 'mint-ui'
 Vue.component(Header.name,Header)
 Vue.component(Swipe.name,Swipe)
 Vue.component(SwipeItem.name,SwipeItem)
-
+Vue.component(Button.name,Button)
+// 导入格式化时间的插件
+import moment from 'moment'
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
-
+// 设置请求的根路径
+Vue.http.options.root = 'http://www.liulongbin.top:3005'
 import router from './router'
+// 定义全局过滤器
+Vue.filter('dateFormat',function(datestr,pattern = "YYYY-MM-DD HH:mm:ss"){
+    return moment(datestr).format(pattern)
+})
 
 var vm = new Vue({
     el:'#app',
