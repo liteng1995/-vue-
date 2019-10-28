@@ -14,7 +14,9 @@ module.exports = {
         open:true,
         port:3000,
         contentBase:'src',
-        hot:true
+        hot:true,
+        // host: '0.0.0.0',
+        // disableHostCheck: true
     },
     plugins:[
         new htmlWebpackPlugin({
