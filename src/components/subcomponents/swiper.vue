@@ -4,7 +4,7 @@
             <!-- 将来使用此轮播图组件，谁为我们传递lunbotuList -->
             <!-- 此时，lunbotuList 应该是父组件向子组件传值来设置 -->
             <mt-swipe-item v-for="item in lunbotuList" :key="item.url">
-                <img :src="item.img" alt="">
+                <img :src="item.img" alt="" :class="{full:isfull}">
             </mt-swipe-item>
         </mt-swipe>
     </div>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-    props:["lunbotuList"]
+    props:["lunbotuList","isfull"]
 }
 </script>
 
@@ -20,15 +20,16 @@ export default {
 .mint-swipe{
     height: 200px;
     .mint-swipe-item{
-        &:nth-child(1){background-color: red;}
-        &:nth-child(2){background-color: blue;}
-        &:nth-child(3){background-color: cyan;}
         
+        text-align: center;
         img {
-            width: 100%;
+            // width: 100%;
             height: 100%;
         }
         
     }
+}
+.full{
+    width: 100%;
 }
 </style>

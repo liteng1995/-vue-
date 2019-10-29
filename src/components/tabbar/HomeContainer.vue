@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- 轮播图 -->
-        <swiper :lunbotuList="lunbotuList"></swiper>
+        <swiper :lunbotuList="lunbotuList" :isfull="true"></swiper>
 
         <!-- 九宫格到六宫格的改造 -->
          <ul class="mui-table-view mui-grid-view mui-grid-9">
